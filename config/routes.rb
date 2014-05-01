@@ -1,4 +1,5 @@
 Pin2::Application.routes.draw do
+  #get "sessions/create" => 'sessions#create'
   resources :restaurants
 
   resources :pins
@@ -8,6 +9,14 @@ Pin2::Application.routes.draw do
   root to: "restaurants#index"
   get "about"=>"pages#about"
   resources :static_pages, :path => "pages"
+
+  #match 'auth/:provider/callback', to: 'sessions#create',via: [:get, :post]
+  #match 'auth/failure', to: redirect('/'),via: [:get, :post]
+  #match 'signout', to: 'sessions#destroy', as: 'signout',via: [:get, :post]
+  get 'auth/:provider/callback' => 'sessions#create'
+  get 'auth/failure' => redirect('/')
+  get 'signout' => 'sessions#destroy', as: 'signout'
+  
   #get "pages/home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

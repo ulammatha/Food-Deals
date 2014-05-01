@@ -28,4 +28,7 @@ Pin2::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+  ENV['FACEBOOK_APP_ID'] = "284234968419766";
+ENV['FACEBOOK_SECRET'] = "ea8b81c4571e868a05ed9d0f681e8af6";
 end

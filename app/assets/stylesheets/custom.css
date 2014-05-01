@@ -112,7 +112,9 @@ html, body {
 #footer div.row-fluid ul.nav li a.social-icons.fb
 {
   height: 16px;
-  background:url(/images/theme/ta-sprite-icons.png) -30px 8px no-repeat;
+
+  background:asset-url('ta-sprite-icons.png');
+
 }
 
 a.social-icons.tw {
